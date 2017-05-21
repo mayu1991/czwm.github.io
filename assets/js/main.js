@@ -1,3 +1,3 @@
 $(".to-add-cust-btn").click(function () {
-    location.href = "/cust-add.html";
+    location.href = "cust-add.html";
 });
