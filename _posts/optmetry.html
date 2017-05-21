@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin form Examples</title>
+    <meta name="description" content="这是一个form页面">
+    <meta name="keywords" content="form">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a
+        href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+    以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand am-g">
+        <!--<strong>Amaze UI</strong>-->
+        <a href="main.html" class="am-icon-arrow-circle-left am-u-sm-4">
+            <small> 返回</small>
+        </a>
+
+        <div class="am-u-sm-centered am-u-sm-5">
+            <strong>客户检测结果</strong>
+        </div>
+
+    </div>
+</header>
+
+<div class="am-cf admin-main">
+    <!-- content start -->
+    <div class="admin-content">
+        <div class="admin-content-body">
+
+            <div class="am-tabs am-margin" data-am-tabs>
+
+                <form class="am-form">
+                    <table class="am-table am-text-nowrap am-table-striped am-table-hover table-main .am-table-compact">
+                        <thead>
+                        <tr>
+                            <th class="table-title">
+                                检测项目
+                            </th>
+                            <th class="table-title">
+                                左眼
+                            </th>
+                            <th class="table-title">
+                                右眼
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>
+                                <small>裸眼视力</small>
+                            </td>
+                            <td><input type="text" class=""/></td>
+                            <td><input type="text"/></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <small>综合验光</small>
+                            </td>
+                            <td><input type="text"/></td>
+                            <td><input type="text"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        预约时间
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <form action="" class="am-form am-form-inline">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="datetime-local"
+                                       class="am-form-field am-input-sm"
+                                       placeholder="日期">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        接待时间
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <form action="" class="am-form am-form-inline">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="datetime-local"
+                                       class="am-form-field am-input-sm" placeholder="时间">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <input type="text" placeholder="请输入接待员姓名"/>
+                    </div>
+                </div>
+
+
+            </div>
+            <hr/>
+            <div class="am-g am-g-collapse">
+                <div class="am-margin-left-lg am-u-sm-10">
+                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">保存</a>
+                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">提交</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2017 manoo, Inc. Licensed under MIT license.</p>
+        </footer>
+
+    </div>
+    <!-- content end -->
+
+</div>
+
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/base/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/base/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/base/amazeui.min.js"></script>
+<script src="assets/js/base/app.js"></script>
+</body>
+</html>

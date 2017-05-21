@@ -1,0 +1,486 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin form Examples</title>
+    <meta name="description" content="这是一个form页面">
+    <meta name="keywords" content="form">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a
+        href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+    以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand am-g">
+        <!--<strong>Amaze UI</strong>-->
+        <a href="main.html" class="am-icon-arrow-circle-left am-u-sm-4">
+            <small> 返回</small>
+        </a>
+
+        <div class="am-u-sm-centered am-u-sm-4">
+            <strong>体验结果</strong>
+        </div>
+
+    </div>
+</header>
+
+<div class="am-cf admin-main">
+
+    <!-- content start -->
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf">
+                    <table class="am-table am-table-striped am-table-hover table-main am-table-compact">
+                        <thead>
+                        <tr>
+                            <th class="table-title">
+                                <small>
+                                    姓名
+                                </small>
+                            </th>
+                            <th class="table-title">
+                                <small>性别</small>
+                            </th>
+                            <th class="table-title">
+                                <small>年龄</small>
+                            </th>
+                            <th class="table-title">
+                                <small>手机号码</small>
+                            </th>
+                            <th class="table-title">
+                                <small>学校名</small>
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>马宇</td>
+                            <td>男</td>
+                            <td>27</td>
+                            <td>166666666</td>
+                            <td>南京邮电大学</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="am-tabs am-margin" data-am-tabs>
+                <ul class="am-tabs-nav am-nav am-nav-tabs">
+                    <li class="am-active"><a href="#tab1">首检</a></li>
+                    <li><a href="#tab2">体验一</a></li>
+                    <li><a href="#tab3">体验二</a></li>
+                    <li><a href="#tab4">体验三</a></li>
+                </ul>
+
+                <div class="am-tabs-bd">
+                    <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+
+                        <form class="am-form">
+                            <table class="am-table am-table-striped am-table-hover table-main am-table-compact">
+                                <thead>
+                                <tr>
+                                    <th class="table-title">
+                                        检测项目
+                                    </th>
+                                    <th class="table-title">
+                                        左眼
+                                    </th>
+                                    <th class="table-title">
+                                        右眼
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>原眼度数</td>
+                                    <td><input type="text"/></td>
+                                    <td><input type="text"/></td>
+
+                                </tr>
+                                <tr>
+                                    <td>裸眼视力</td>
+                                    <td><input type="text"/></td>
+                                    <td><input type="text"/></td>
+
+                                </tr>
+                                <tr>
+                                    <td>原眼矫正视力</td>
+                                    <td><input type="text"/></td>
+                                    <td><input type="text"/></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">屈光性质</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <div class="am-btn-group" data-am-button>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_1"> 近视
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_2"> 远视
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_3"> 斜视
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_4"> 弱视
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">屈光性质（程度）</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <div class="am-btn-group" data-am-button>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_level_1"> 轻
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_level_2"> 中
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="options"
+                                               id="refractive_properties_level_3"> 高
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                预约时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm"
+                                               placeholder="日期">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                接待时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm" placeholder="时间">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">接待员</div>
+                            <div class="am-u-sm-8 am-u-md-10"><input type="text"
+                                                                     placeholder="请输入接待员的姓名"/></div>
+                        </div>
+
+                    </div>
+
+                    <!--<div class="am-tab-panel am-fade" id="tab2">
+                        <form class="am-form">
+                            <table class="am-table am-table-striped am-table-hover table-main am-table-compact">
+                                <thead>
+                                <tr>
+                                    <th class="table-title">
+                                        <small>
+                                            服务体验
+                                        </small>
+                                    </th>
+                                    <th class="table-title">
+                                        <small>接待员</small>
+                                    </th>
+                                    <th class="table-title">
+                                        <small>预约时间</small>
+                                    </th>
+                                    <th class="table-title">
+                                        <small>体验时间</small>
+                                    </th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <small>第一次</small>
+                                    </td>
+                                    <td><input type="text"/></td>
+                                    <td>
+
+                                        <div>
+                                            <div class="am-form-group am-form-icon">
+                                                <i class="am-icon-calendar"></i>
+                                                <input type="datetime-local"
+                                                       class="am-form-field am-input-sm"
+                                                       placeholder="日期">
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="am-form-group am-form-icon">
+                                                <i class="am-icon-calendar"></i>
+                                                <input type="datetime-local"
+                                                       class="am-form-field am-input-sm"
+                                                       placeholder="日期">
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small>第二次</small>
+                                    </td>
+                                    <td><input type="text"/></td>
+                                    <td>
+                                        <div>
+                                            <div class="am-form-group am-form-icon">
+                                                <i class="am-icon-calendar"></i>
+                                                <input type="datetime-local"
+                                                       class="am-form-field am-input-sm"
+                                                       placeholder="日期">
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="am-form-group am-form-icon">
+                                                <i class="am-icon-calendar"></i>
+                                                <input type="datetime-local"
+                                                       class="am-form-field am-input-sm"
+                                                       placeholder="日期">
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small>第三次</small>
+                                    </td>
+                                    <td><input type="text"/></td>
+                                    <td>
+                                        <div>
+                                            <form action="" class="am-form am-form-inline">
+                                                <div class="am-form-group am-form-icon">
+                                                    <i class="am-icon-calendar"></i>
+                                                    <input type="date"
+                                                           class="am-form-field am-input-sm"
+                                                           placeholder="日期">
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="am-form-group am-form-icon">
+                                                <i class="am-icon-calendar"></i>
+                                                <input type="date"
+                                                       class="am-form-field am-input-sm"
+                                                       placeholder="日期">
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>-->
+                    <div class="am-tab-panel am-fade" id="tab2">
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                预约时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm"
+                                               placeholder="日期">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                接待时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm" placeholder="时间">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <input type="text" placeholder="请输入接待员姓名"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-tab-panel am-fade" id="tab3">
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                预约时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm"
+                                               placeholder="日期">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                接待时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm" placeholder="时间">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <input type="text" placeholder="请输入接待员姓名"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-tab-panel am-fade" id="tab4">
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                预约时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm"
+                                               placeholder="日期">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                接待时间
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <form action="" class="am-form am-form-inline">
+                                    <div class="am-form-group am-form-icon">
+                                        <i class="am-icon-calendar"></i>
+                                        <input type="datetime-local"
+                                               class="am-form-field am-input-sm" placeholder="时间">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                <input type="text" placeholder="请输入接待员姓名"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr/>
+            <div class="am-g am-g-collapse">
+                <div class="am-margin-left-lg am-u-sm-10">
+                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">保存</a>
+                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">提交</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2017 manoo, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
+    <!-- content end -->
+
+</div>
+
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/base/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/base/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/base/amazeui.min.js"></script>
+<script src="assets/js/base/app.js"></script>
+</body>
+</html>
