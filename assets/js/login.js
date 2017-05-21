@@ -3,7 +3,7 @@ $(".login-btn").click(function () {
     var password = $("#user-password").val();
     var storeId = $("#user-storeId").val();
     if (username != null && password != null && username == 'admin' && password == "123456") {
-        location.href = "main.html";
+        location.href = "https://mayu1991.github.io/czwm.github.io/main.html";
     } else {
 
     }
