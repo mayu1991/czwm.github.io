@@ -1,6 +1,7 @@
 var Glass = Glass || {};
 Glass.host = "http://106.14.180.141:20301/czwm-glass";
-Glass.version = "?v=1.0";
+//Glass.host = "http://127.0.0.1:8080/czwm";
+Glass.version = "&v=1.0";
 
 function gTabsResp(responseObj) {
     return JSON.stringify(responseObj);

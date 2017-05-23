@@ -25,7 +25,7 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
         <!--<strong>Amaze UI</strong>-->
-        <a href="main.html" class="am-icon-backward am-u-sm-4">
+        <a href="main.html" class="am-icon-backward am-u-sm-4 back-btn">
             <small>客户列表</small>
         </a>
 
@@ -104,11 +104,20 @@
                         </div>
 
                         <div class="am-form-group">
+                            <label for="user-tratorName" class="am-u-sm-4 am-form-label">
+                                业务员<sup class="am-text-danger">*</sup>
+                            </label>
+                            <div class="am-u-sm-8">
+                                <input type="text" id="user-tratorName">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
                             <label for="user-school" class="am-u-sm-4 am-form-label">
                                 学校名称
                             </label>
                             <div class="am-u-sm-8">
-                                <input type="tel" id="user-school">
+                                <input type="text" id="user-school">
                             </div>
                         </div>
                         <hr/>
@@ -151,6 +160,8 @@
 <script src="assets/js/config/context.js"></script>
 
 <script src="assets/js/base/base64.js"></script>
+
+<script src="layer_mobile/layer.js"></script>
 
 </body>
 </html>

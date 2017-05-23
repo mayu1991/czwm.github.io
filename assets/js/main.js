@@ -1,10 +1,21 @@
 $(document).ready(function () {
-    getAllCust();
 
-    $(".to-add-cust-btn").click(function () {
-        location.href = "cust-add.html";
+    getAllCust();
+    var userId = Glass.getUrlParam("userId");
+
+    $(".cust-add").html(
+        '<a href="cust-add.html?userId=' + userId + '"><span class="am-icon-send " id="cust-add-btn"></span> <span>新增客户信息</span></a>'
+    );
+
+    $('#refresh-btn').click(function () {
+        //getExperience(userId, custId);
+        location.href = 'main.html?userId=' + userId;
     });
-})
+
+    // $("#cust-add-btn").click(function () {
+    //     location.href = "cust-add.html?userId=" + userId;
+    // });
+});
 
 /**
  * 查询出所有客户信息

@@ -41,20 +41,23 @@
     <div class="admin-content">
         <div class="admin-content-body">
 
-            <div class="am-tabs am-margin" style="margin-top: 50px">
+            <div class="am-tabs am-margin" style="margin-top: 80px">
 
                 <form class="am-form">
 
                     <div class="am-hide"><input id="dealId"></input></div>
                     <div class="am-g am-margin-top">
-                        <div class="am-u-sm-4 am-u-md-2 am-text-right">成交员</div>
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            成交员<sup class="am-text-danger">*</sup>
+                        </div>
                         <div class="am-u-sm-8 am-u-md-10">
                             <input type="text" placeholder="请输入接待员姓名" id="dealTratorName"/>
                         </div>
                     </div>
 
                     <div class="am-g am-margin-top">
-                        <div class="am-u-sm-4 am-u-md-2 am-text-right">成交情况</div>
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">成交情况<sup
+                                class="am-text-danger">*</sup></div>
                         <div class="am-u-sm-8 am-u-md-10">
                             <div class="am-btn-group" data-am-button>
                                 <label class="am-btn am-btn-default am-btn-xs dealResultTypeOptions1">
@@ -111,5 +114,7 @@
 <script src="assets/js/config/context.js"></script>
 
 <script src="assets/js/base/base64.js"></script>
+
+<script src="layer_mobile/layer.js"></script>
 </body>
 </html>

@@ -28,101 +28,32 @@ $(document).ready(function () {
             '                                手机号码                   ' +
             '                            </th>                      ' +
             '                            <th class="table-title">   ' +
+            '                                业务员                   ' +
+            '                            </th>                      ' +
+            '                            <th class="table-title">   ' +
             '                                学校名称                    ' +
             '                            </th>                      ' +
             '                        </tr>                          ' +
             '                        </thead> <tbody>                      ');
-        custTable.append('<tr><td>' + custDetail.custName + '</td><td>' + custDetail.sexDesc + '</td><td>' + custDetail.age + '</td><td>' + custDetail.mobilePhone + '</td><td>' + schoolName + '</td></tr></tbody>');
+        custTable.append('<tr><td>' + custDetail.custName + '</td><td>' + custDetail.sexDesc + '</td><td>' + custDetail.age + '</td><td>' + custDetail.mobilePhone + '</td><td>' + custDetail.dealTratorName + '</td><td>' + schoolName + '</td></tr></tbody>');
 
     }
     $('.submit-btn').click(function () {
-        var leftPrimaryMirrorNumber = $("#leftPrimaryMirrorNumber").val();
-        var rightPrimaryMirrorNumber = $("#rightPrimaryMirrorNumber").val();
-        var leftNakedVision = $("#leftNakedVision").val();
-        var rightNakedVision = $("#rightNakedVision").val();
-        var leftMirrorCollectionVision = $("#leftMirrorCollectionVision").val();
-        var rightMirrorCollectionVision = $("#rightMirrorCollectionVision").val();
-        var refractiveProperties = $("input[name='refractiveProperties']:checked").val();
-        var refractivePropertiesLevel = $("input[name='refractivePropertiesLevel']:checked").val();
-        var appointmentTime = $('#appointmentTime').val();
-        var optometryTime = $("#optometryTime").val();
-        var receptionName = $("#receptionName").val();
 
-        var id = $('#optometryId').val();
-        id = id == "" || id == '' ? -1 : id;
-
-        var optometry = {
-            "id": id,
-            "custId": custId,
-            "leftPrimaryMirrorNumber": leftPrimaryMirrorNumber,
-            "rightPrimaryMirrorNumber": rightPrimaryMirrorNumber,
-            "leftNakedVision": leftNakedVision,
-            "rightNakedVision": rightNakedVision,
-            "leftMirrorCollectionVision": leftMirrorCollectionVision,
-            "rightMirrorCollectionVision": rightMirrorCollectionVision,
-            "refractiveProperties": refractiveProperties,
-            "refractivePropertiesLevel": refractivePropertiesLevel,
-            "appointmentTimeStr": appointmentTime,
-            "optometryTimeStr": optometryTime,
-            "receptionName": receptionName,
-            "experienceType": 1,
-            "submitFlag": 1
-        };
-        var firstExperience = {
-            "custId": custId,
-            "appointmentTimeStr": $('#appointmentTimeExp1').val(),
-            "experienceTimeStr": $('#experienceTimeExp1').val(),
-            "receptionName": $('#receptionNameExp1').val(),
-            "experienceFrequency": 1
-        };
-        var secondExperience = {
-            "custId": custId,
-            "appointmentTimeStr": $('#appointmentTimeExp2').val(),
-            "experienceTimeStr": $('#experienceTimeExp2').val(),
-            "receptionName": $('#receptionNameExp2').val(),
-            "experienceFrequency": 2
-        };
-        var thirdExperience = {
-            "custId": custId,
-            "appointmentTimeStr": $('#appointmentTimeExp3').val(),
-            "experienceTimeStr": $('#experienceTimeExp3').val(),
-            "receptionName": $('#receptionNameExp3').val(),
-            "experienceFrequency": 3
-        };
-        var experiences = [];
-        experiences.push(firstExperience);
-        experiences.push(secondExperience);
-        experiences.push(thirdExperience);
-
-        var params = {
-            "experiences": experiences,
-            "optometry": optometry,
-            "custId": custId
-        };
-
-        //转json
-        params = JSON.stringify(params);
-        //base64加密
-        params = jQuery.base64.encode(params);
-
-        $.ajax({
-            url: Glass.host + "/cust/experience/save",
-            type: "GET",
-            dataType: "json",
-            data: params,
-            async: false,
-            "success": function (resp) {
-                if (resp != null) {
-                    if (resp.success && resp.data != null) {
-
-                        //保存成功刷新页面
-                        getExperience(userId, custId);
-                    }
-                }
-
+        //询问框
+        layer.open({
+            content: '确认提交？'
+            , btn: ['确认提交', '点错了']
+            , yes: function (index) {
+                layer.close(index);
+                submitExperience(custId);
             }
-        })
+        });
+    });
 
+    $('#refresh-btn').click(function () {
+        //getExperience(userId, custId);
+        location.href = 'experience.html?custId=' + custId + '&userId=' + userId;
     });
 
     $('.save-btn').click(function () {
@@ -204,6 +135,11 @@ $(document).ready(function () {
                 if (resp != null) {
                     if (resp.success && resp.data != null) {
 
+                        layer.open({
+                            content: '保存成功'
+                            , skin: 'footer', time: 2
+                        });
+
                         //保存成功刷新页面
                         getExperience(userId, custId);
                     }
@@ -281,6 +217,98 @@ function getExperience(userId, custId) {
                         $("#experienceTimeExp3").val(resp.data.thirdExperienceResult.experienceTimeStr);
                         $("#receptionNameExp3").val(resp.data.thirdExperienceResult.receptionName);
                     }
+                }
+            }
+
+        }
+    });
+};
+
+function submitExperience(custId) {
+    var leftPrimaryMirrorNumber = $("#leftPrimaryMirrorNumber").val();
+    var rightPrimaryMirrorNumber = $("#rightPrimaryMirrorNumber").val();
+    var leftNakedVision = $("#leftNakedVision").val();
+    var rightNakedVision = $("#rightNakedVision").val();
+    var leftMirrorCollectionVision = $("#leftMirrorCollectionVision").val();
+    var rightMirrorCollectionVision = $("#rightMirrorCollectionVision").val();
+    var refractiveProperties = $("input[name='refractiveProperties']:checked").val();
+    var refractivePropertiesLevel = $("input[name='refractivePropertiesLevel']:checked").val();
+    var appointmentTime = $('#appointmentTime').val();
+    var optometryTime = $("#optometryTime").val();
+    var receptionName = $("#receptionName").val();
+
+    var id = $('#optometryId').val();
+    id = id == "" || id == '' ? -1 : id;
+
+    var optometry = {
+        "id": id,
+        "custId": custId,
+        "leftPrimaryMirrorNumber": leftPrimaryMirrorNumber,
+        "rightPrimaryMirrorNumber": rightPrimaryMirrorNumber,
+        "leftNakedVision": leftNakedVision,
+        "rightNakedVision": rightNakedVision,
+        "leftMirrorCollectionVision": leftMirrorCollectionVision,
+        "rightMirrorCollectionVision": rightMirrorCollectionVision,
+        "refractiveProperties": refractiveProperties,
+        "refractivePropertiesLevel": refractivePropertiesLevel,
+        "appointmentTimeStr": appointmentTime,
+        "optometryTimeStr": optometryTime,
+        "receptionName": receptionName,
+        "experienceType": 1,
+        "submitFlag": 1
+    };
+    var firstExperience = {
+        "custId": custId,
+        "appointmentTimeStr": $('#appointmentTimeExp1').val(),
+        "experienceTimeStr": $('#experienceTimeExp1').val(),
+        "receptionName": $('#receptionNameExp1').val(),
+        "experienceFrequency": 1
+    };
+    var secondExperience = {
+        "custId": custId,
+        "appointmentTimeStr": $('#appointmentTimeExp2').val(),
+        "experienceTimeStr": $('#experienceTimeExp2').val(),
+        "receptionName": $('#receptionNameExp2').val(),
+        "experienceFrequency": 2
+    };
+    var thirdExperience = {
+        "custId": custId,
+        "appointmentTimeStr": $('#appointmentTimeExp3').val(),
+        "experienceTimeStr": $('#experienceTimeExp3').val(),
+        "receptionName": $('#receptionNameExp3').val(),
+        "experienceFrequency": 3
+    };
+    var experiences = [];
+    experiences.push(firstExperience);
+    experiences.push(secondExperience);
+    experiences.push(thirdExperience);
+
+    var params = {
+        "experiences": experiences,
+        "optometry": optometry,
+        "custId": custId
+    };
+
+    //转json
+    params = JSON.stringify(params);
+    //base64加密
+    params = jQuery.base64.encode(params);
+
+    $.ajax({
+        url: Glass.host + "/cust/experience/save",
+        type: "GET",
+        dataType: "json",
+        data: params,
+        async: false,
+        "success": function (resp) {
+            if (resp != null) {
+                if (resp.success && resp.data != null) {
+                    layer.open({
+                        content: '提交成功'
+                        , skin: 'footer'
+                    });
+                    //保存成功刷新页面
+                    getExperience(userId, custId);
                 }
             }
 

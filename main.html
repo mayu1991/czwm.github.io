@@ -29,8 +29,8 @@
             <small>登录</small>
         </a>
 
-        <div class="am-u-sm-centered am-u-sm-4">
-            <strong>客户列表</strong>
+        <div class="am-u-sm-centered am-u-sm-5">
+            <strong>客户列表 <a class="am-icon-refresh" id="refresh-btn"></a></strong>
         </div>
 
     </div>
@@ -41,15 +41,14 @@
     <!-- content start -->
     <div class="admin-content">
         <div class="admin-content-body">
-            <div class="am-container am-cf am-padding am-padding-bottom-0">
+            <div class="am-container am-cf am-padding am-padding-bottom-0 cust-add">
                 <!--<div class="am-cf">-->
                 <!--<button type="button" class="am-btn am-btn-default to-add-cust-btn"><span-->
                 <!--class="am-icon-plus"></span> 新增客户信息-->
                 <!--</button>-->
                 <!--</div>-->
-                <a href="cust-add.html"><span
-                        class="am-icon-send"></span> <span
-                >新增客户信息</span></a>
+                <a href="cust-add.html?userId="><span class="am-icon-send " id="cust-add-btn"></span> <span>新增客户信息</span></a>
+
             </div>
 
             <div class="am-g">
@@ -95,6 +94,8 @@
 <script src="assets/js/config/context.js"></script>
 
 <script src="assets/js/base/base64.js"></script>
+
+<script src="layer_mobile/layer.js"></script>
 <!--<script src="assets/js/layer.js"></script>-->
 <!--<script src="assets/js/need/layer.css"></script>-->
 </body>

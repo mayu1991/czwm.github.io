@@ -5,78 +5,55 @@ $(document).ready(function () {
     getDealDetail(userId, custId);
 
     //保存
-    $(".save-btn").click(function () {
-        var dealTratorName = $("#dealTratorName").val();
-        var dealResultType = $("#dealResultType").val();
-
-        var id = $('#dealId').val();
-
-        id = id == "" || id == '' ? -1 : id;
-        var params = {
-            "id": id,
-            "dealTratorName": dealTratorName,
-            "dealResultType": dealResultType
-        };
-        //转json
-        params = JSON.stringify(params);
-        //base64加密
-        params = jQuery.base64.encode(params);
-
-        $.ajax({
-            url: Glass.host + "/cust/deal/save",
-            type: "GET",
-            dataType: "json",
-            data: params,
-            async: false,
-            "success": function (resp) {
-                if (resp != null) {
-                    if (resp.success && resp.data != null) {
-
-                        //保存成功刷新页面
-                        getDealDetail(userId, custId);
-                    }
-                }
-
-            }
-        })
-
-    });
+    // $(".save-btn").click(function () {
+    //     var dealTratorName = $("#dealTratorName").val();
+    //     var dealResultType = $("#dealResultType").val();
+    //
+    //     var id = $('#dealId').val();
+    //
+    //     id = id == "" || id == '' ? -1 : id;
+    //     dealTratorName = dealTratorName == "" || dealTratorName == '' ? null : dealTratorName;
+    //     var params = {
+    //         "id": id,
+    //         "dealTratorName": dealTratorName,
+    //         "dealResultType": dealResultType,
+    //         "custId": custId
+    //     };
+    //     //转json
+    //     params = JSON.stringify(params);
+    //     //base64加密
+    //     params = jQuery.base64.encode(params);
+    //
+    //     $.ajax({
+    //         url: Glass.host + "/cust/deal/save",
+    //         type: "GET",
+    //         dataType: "json",
+    //         data: params,
+    //         async: false,
+    //         "success": function (resp) {
+    //             if (resp != null) {
+    //                 if (resp.success && resp.data != null) {
+    //
+    //                     //保存成功刷新页面
+    //                     getDealDetail(userId, custId);
+    //                 }
+    //             }
+    //
+    //         }
+    //     })
+    //
+    // });
 
     $(".submit-btn").click(function () {
-        var dealTratorName = $("#dealTratorName").val();
-        var dealResultType = $("input[name='dealResultTypeOptions']:checked").val();
-        var id = $('#dealId').val();
-
-        id = id == "" || id == '' ? -1 : id;
-        var params = {
-            "id": id,
-            "dealTratorName": dealTratorName,
-            "dealResultType": dealResultType,
-            "submitFlag": 1
-        };
-        //转json
-        params = JSON.stringify(params);
-        //base64加密
-        params = jQuery.base64.encode(params);
-
-        $.ajax({
-            url: Glass.host + "/cust/deal/save",
-            type: "GET",
-            dataType: "json",
-            data: params,
-            async: false,
-            "success": function (resp) {
-                if (resp != null) {
-                    if (resp.success && resp.data != null) {
-
-                        //保存成功刷新页面
-                        getDealDetail(userId, custId);
-                    }
-                }
-
+        //询问框
+        layer.open({
+            content: '确认提交？'
+            , btn: ['确认提交', '点错了']
+            , yes: function (index) {
+                submitDeal(userId, custId);
+                layer.close(index);
             }
-        })
-
+        });
     });
 
 
@@ -121,9 +98,59 @@ function getDealDetail(userId, custId) {
                     //     $('#dealResultType1').attr('checked', 'checked');
                     // }
                     $('.dealResultTypeOptions' + resp.data.dealResultType).addClass("am-active");
+                    $('#dealResultType' + resp.data.dealResultType).attr('checked', true);
                 }
             }
 
         }
     });
+}
+
+function submitDeal(userId, custId) {
+    var dealTratorName = $("#dealTratorName").val();
+    var dealResultType = $("input[name='dealResultTypeOptions']:checked").val();
+    var id = $('#dealId').val();
+
+    id = id == "" || id == '' ? -1 : id;
+    var deal = {
+        "id": id,
+        "dealTratorName": dealTratorName,
+        "dealResultType": dealResultType,
+        "submitFlag": 1,
+        "custId": custId
+    };
+    var params = {
+        "deal": deal
+    };
+    //转json
+    params = JSON.stringify(params);
+    //base64加密
+    params = jQuery.base64.encode(params);
+
+    $.ajax({
+        url: Glass.host + "/cust/deal/save",
+        type: "GET",
+        dataType: "json",
+        data: params,
+        async: false,
+        "success": function (resp) {
+            if (resp != null) {
+                if (resp.success && resp.data != null) {
+                    layer.open({
+                        content: '提交成功'
+                        , skin: 'footer'
+                    });
+                    //保存成功刷新页面
+                    getDealDetail(userId, custId);
+                } else {
+                    layer.open({
+                        content: resp.message
+                        , btn: '我知道了'
+                    });
+                }
+            }
+
+        }
+    })
+
 }

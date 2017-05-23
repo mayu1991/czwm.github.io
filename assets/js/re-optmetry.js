@@ -21,7 +21,7 @@ $(document).ready(function () {
         var id = $('#optometryId').val();
 
         id = id == "" || id == '' ? -1 : id;
-        var params = {
+        var optometry = {
             "id": id,
             "leftCombinedOptometryVision": leftCombinedOptometryVision,
             "rightCombinedOptometryVision": rightCombinedOptometryVision,
@@ -29,7 +29,11 @@ $(document).ready(function () {
             "custId": custId,
             "rightNakedVision": rightNakedVision,
             "receptionName": receptionName,
-            "experienceType": 3//第三次检测
+            "experienceType": 3
+        };
+
+        var params = {
+            "optometry": optometry
         };
         //转json
         params = JSON.stringify(params);
@@ -46,6 +50,10 @@ $(document).ready(function () {
                 if (resp != null) {
                     if (resp.success && resp.data != null) {
 
+                        layer.open({
+                            content: '保存成功'
+                            , skin: 'footer'
+                        });
                         //保存成功刷新页面
                         getOptometryDetail(userId, custId);
                     }
@@ -58,50 +66,15 @@ $(document).ready(function () {
 
     //提交
     $(".submit-btn").click(function () {
-        var leftCombinedOptometryVision = $("#leftCombinedVision").val();
-        var rightCombinedOptometryVision = $("#rightCombinedVision").val();
-
-        var leftNakedVision = $("#leftNakedVision").val();
-        var rightNakedVision = $("#rightNakedVision").val();
-
-        var receptionName = $("#receptionName").val();
-
-        var id = $('#optometryId').val();
-        id = id == "" || id == '' ? -1 : id;
-
-        var params = {
-            "id": id,
-            "leftCombinedOptometryVision": leftCombinedOptometryVision,
-            "rightCombinedOptometryVision": rightCombinedOptometryVision,
-            "leftNakedVision": leftNakedVision,
-            "custId": custId,
-            "rightNakedVision": rightNakedVision,
-            "receptionName": receptionName,
-            "experienceType": 3,//第二次检测,
-            "submitFlag": 1//表示已提交
-        };
-        //转json
-        params = JSON.stringify(params);
-        //base64加密
-        params = jQuery.base64.encode(params);
-
-        $.ajax({
-            url: Glass.host + "/cust/optometry/save",
-            type: "GET",
-            dataType: "json",
-            data: params,
-            async: false,
-            "success": function (resp) {
-                if (resp != null) {
-                    if (resp.success && resp.data != null) {
-
-                        //保存成功刷新页面
-                        getOptometryDetail(userId, custId);
-                    }
-                }
-
+        //询问框
+        layer.open({
+            content: '确认提交？'
+            , btn: ['确认提交', '点错了']
+            , yes: function (index) {
+                submitReOptmetry(userId, custId);
+                layer.close(index);
             }
-        })
+        });
 
     });
 
@@ -158,4 +131,59 @@ function getOptometryDetail(userId, custId) {
 
         }
     });
+}
+
+function submitReOptmetry(userId, custId) {
+    var leftCombinedOptometryVision = $("#leftCombinedVision").val();
+    var rightCombinedOptometryVision = $("#rightCombinedVision").val();
+
+    var leftNakedVision = $("#leftNakedVision").val();
+    var rightNakedVision = $("#rightNakedVision").val();
+
+    var receptionName = $("#receptionName").val();
+
+    var id = $('#optometryId').val();
+    id = id == "" || id == '' ? -1 : id;
+
+    var optometry = {
+        "id": id,
+        "leftCombinedOptometryVision": leftCombinedOptometryVision,
+        "rightCombinedOptometryVision": rightCombinedOptometryVision,
+        "leftNakedVision": leftNakedVision,
+        "custId": custId,
+        "rightNakedVision": rightNakedVision,
+        "receptionName": receptionName,
+        "experienceType": 3,//第二次检测,
+        "submitFlag": 1//表示已提交
+    };
+
+    var params = {
+        "optometry": optometry
+    };
+
+    //转json
+    params = JSON.stringify(params);
+    //base64加密
+    params = jQuery.base64.encode(params);
+
+    $.ajax({
+        url: Glass.host + "/cust/optometry/save",
+        type: "GET",
+        dataType: "json",
+        data: params,
+        async: false,
+        "success": function (resp) {
+            if (resp != null) {
+                if (resp.success && resp.data != null) {
+                    layer.open({
+                        content: '提交成功'
+                        , skin: 'footer'
+                    });
+                    //保存成功刷新页面
+                    getOptometryDetail(userId, custId);
+                }
+            }
+
+        }
+    })
 }

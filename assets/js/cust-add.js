@@ -1,20 +1,26 @@
 $(document).ready(function () {
+
+    var userId = Glass.getUrlParam("userId");
+
+    //给返回按钮设置初始值
+    $(".back-btn").attr('href', 'main.html?userId=' + userId);
+
     $(".add-cust-btn").click(function () {
         var custName = $("#user-name").val();
         var mobilePhone = $("#user-phone").val();
         var age = $("#user-age").val();
         var schoolName = $('#user-school').val();
         var sex = $("input[name='sex-options']:checked").val();
-
-        if (custName != null && mobilePhone != null && age != null && schoolName != null && sex != null) {
+        var dealTratorName = $("#user-tratorName").val();
+        if (custName != null && mobilePhone != null && age != null && sex != null) {
             //location.href = "https://mayu1991.github.io/czwm.github.io/main.html";
-
             var params = {
                 "custName": custName,
                 "mobilePhone": mobilePhone,
                 "age": age,
                 "schoolName": schoolName,
-                "sex": sex
+                "sex": sex,
+                "dealTratorName": dealTratorName
             };
             //转json
             params = JSON.stringify(params);
@@ -33,12 +39,22 @@ $(document).ready(function () {
                         // var responseObj = JSON.stringify(resp);
                         //登录成功，跳转到主页面
                         if (resp.success) {
-                            location.href = "main.html?refresh=1";//刷新页面
+                            layer.open({
+                                content: '提交成功'
+                                , skin: 'footer'
+                            });
+                            location.href = "main.html?userId=" + userId;//刷新页面
                         } else {
-                            alert(resp.message);
+                            layer.open({
+                                content: resp.message
+                                , btn: '我知道了'
+                            });
                         }
                     } else {
-                        alert("新增失败，请联系系统管理员");
+                        layer.open({
+                            content: "新增客户失败，请联系系统管理员"
+                            , btn: '我知道了'
+                        });
                     }
 
                 }
