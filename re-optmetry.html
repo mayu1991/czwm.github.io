@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin form Examples</title>
+    <title>czwm-support</title>
     <meta name="description" content="这是一个form页面">
     <meta name="keywords" content="form">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,28 +25,27 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
         <!--<strong>Amaze UI</strong>-->
-        <a href="main.html" class="am-icon-arrow-circle-left am-u-sm-4">
-            <small> 返回</small>
+        <a href="main.html" class="am-icon-backward am-u-sm-4 back-btn">
+            <small>客户列表</small>
         </a>
 
-        <div class="am-u-sm-centered am-u-sm-6">
-            <strong>客户复检结果</strong>
+        <div class="am-u-sm-centered am-u-sm-5">
+            <strong>客户检测结果</strong>
         </div>
 
     </div>
 </header>
 
 <div class="am-cf admin-main">
-
     <!-- content start -->
     <div class="admin-content">
         <div class="admin-content-body">
 
             <div class="am-tabs am-margin" data-am-tabs>
 
+                <div class="am-hide"><input id="optometryId"></input></div>
                 <form class="am-form">
-
-                    <table class="am-table am-text-nowrap am-table-striped am-table-hover table-main am-table-compact">
+                    <table class="am-table am-text-nowrap am-table-striped am-table-hover table-main .am-table-compact">
                         <thead>
                         <tr>
                             <th class="table-title">
@@ -67,47 +66,49 @@
                             <td>
                                 裸眼视力
                             </td>
-                            <td><input type="text" class=""/></td>
-                            <td><input type="text"/></td>
+                            <td><input type="text" id="leftNakedVision"/></td>
+                            <td><input type="text" id="rightNakedVision"/></td>
 
                         </tr>
                         <tr>
                             <td>
                                 综合验光
                             </td>
-                            <td><input type="text"/></td>
-                            <td><input type="text"/></td>
+                            <td><input type="text" id="leftCombinedVision"/></td>
+                            <td><input type="text" id="rightCombinedVision"/></td>
                         </tr>
                         </tbody>
                     </table>
-                    <hr/>
-                    <div class="am-g am-margin-top">
-                        <div class="am-u-sm-4 am-u-md-2 am-text-left">接待员</div>
-                        <div class="am-u-sm-8 am-u-md-10">
-                            <input type="text" placeholder="请输入接待员姓名"/>
-                        </div>
-                    </div>
                 </form>
                 <hr/>
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <input type="text" placeholder="请输入接待员姓名" id="receptionName"/>
+                    </div>
+                </div>
+
 
             </div>
+            <hr/>
             <div class="am-g am-g-collapse">
                 <div class="am-margin-left-lg am-u-sm-10">
-                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">保存</a>
-                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">提交</a>
+                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link save-btn">保存</a>
+                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link submit-btn">提交</a>
                 </div>
             </div>
-
         </div>
 
         <footer class="admin-content-footer">
             <hr>
             <p class="am-padding-left">© 2017 manoo, Inc. Licensed under MIT license.</p>
         </footer>
+
     </div>
     <!-- content end -->
 
 </div>
+
 
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
@@ -120,5 +121,11 @@
 <!--<![endif]-->
 <script src="assets/js/base/amazeui.min.js"></script>
 <script src="assets/js/base/app.js"></script>
+
+<script src="assets/js/re-optmetry.js"></script>
+
+<script src="assets/js/config/context.js"></script>
+
+<script src="assets/js/base/base64.js"></script>
 </body>
 </html>

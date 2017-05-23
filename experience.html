@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin form Examples</title>
+    <title>czwm-support</title>
     <meta name="description" content="这是一个form页面">
     <meta name="keywords" content="form">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,8 +25,8 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
         <!--<strong>Amaze UI</strong>-->
-        <a href="main.html" class="am-icon-arrow-circle-left am-u-sm-4">
-            <small> 返回</small>
+        <a href="main.html" class="am-icon-backward am-u-sm-4 back-btn">
+            <small>客户列表</small>
         </a>
 
         <div class="am-u-sm-centered am-u-sm-4">
@@ -40,40 +40,32 @@
 
     <!-- content start -->
     <div class="admin-content">
+        <div class="am-hide"><input id="optometryId"></input></div>
         <div class="admin-content-body">
             <div class="am-cf am-padding am-padding-bottom-0">
                 <div class="am-fl am-cf">
-                    <table class="am-table am-table-striped am-table-hover table-main am-table-compact">
+                    <table class="am-table am-table-striped am-table-hover table-main am-table-compact"
+                           id="cust-table">
                         <thead>
                         <tr>
                             <th class="table-title">
-                                <small>
-                                    姓名
-                                </small>
+                                姓名
                             </th>
                             <th class="table-title">
-                                <small>性别</small>
+                                性别
                             </th>
                             <th class="table-title">
-                                <small>年龄</small>
+                                年龄
                             </th>
                             <th class="table-title">
-                                <small>手机号码</small>
+                                手机号码
                             </th>
                             <th class="table-title">
-                                <small>学校名</small>
+                                学校名称
                             </th>
-
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>马宇</td>
-                            <td>男</td>
-                            <td>27</td>
-                            <td>166666666</td>
-                            <td>南京邮电大学</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -111,20 +103,20 @@
                                 <tbody>
                                 <tr>
                                     <td>原眼度数</td>
-                                    <td><input type="text"/></td>
-                                    <td><input type="text"/></td>
+                                    <td><input type="text" id="leftPrimaryMirrorNumber"/></td>
+                                    <td><input type="text" id="rightPrimaryMirrorNumber"/></td>
 
                                 </tr>
                                 <tr>
                                     <td>裸眼视力</td>
-                                    <td><input type="text"/></td>
-                                    <td><input type="text"/></td>
+                                    <td><input type="text" id="leftNakedVision"/></td>
+                                    <td><input type="text" id="rightNakedVision"/></td>
 
                                 </tr>
                                 <tr>
                                     <td>原眼矫正视力</td>
-                                    <td><input type="text"/></td>
-                                    <td><input type="text"/></td>
+                                    <td><input type="text" id="leftMirrorCollectionVision"/></td>
+                                    <td><input type="text" id="rightMirrorCollectionVision"/></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -135,21 +127,21 @@
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">屈光性质</div>
                             <div class="am-u-sm-8 am-u-md-10">
                                 <div class="am-btn-group" data-am-button>
-                                    <label class="am-btn am-btn-default am-btn-xs">
-                                        <input type="radio" name="options"
-                                               id="refractive_properties_1"> 近视
+                                    <label class="am-btn am-btn-default am-btn-xs refractiveProperties1">
+                                        <input type="radio" name="refractiveProperties"
+                                               id="refractiveProperties1" value="1"> 近视
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs refractiveProperties2">
+                                        <input type="radio" name="refractiveProperties"
+                                               id="refractiveProperties2" value="2"> 远视
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs refractiveProperties3">
+                                        <input type="radio" name="refractiveProperties"
+                                               id="refractiveProperties3" value="3"> 斜视
                                     </label>
                                     <label class="am-btn am-btn-default am-btn-xs">
                                         <input type="radio" name="options"
-                                               id="refractive_properties_2"> 远视
-                                    </label>
-                                    <label class="am-btn am-btn-default am-btn-xs">
-                                        <input type="radio" name="options"
-                                               id="refractive_properties_3"> 斜视
-                                    </label>
-                                    <label class="am-btn am-btn-default am-btn-xs">
-                                        <input type="radio" name="options"
-                                               id="refractive_properties_4"> 弱视
+                                               id="refractive_properties_4" value="4"> 弱视
                                     </label>
 
                                 </div>
@@ -160,17 +152,17 @@
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">屈光性质（程度）</div>
                             <div class="am-u-sm-8 am-u-md-10">
                                 <div class="am-btn-group" data-am-button>
-                                    <label class="am-btn am-btn-default am-btn-xs">
-                                        <input type="radio" name="options"
-                                               id="refractive_properties_level_1"> 轻
+                                    <label class="am-btn am-btn-default am-btn-xs refractivePropertiesLevel1">
+                                        <input type="radio" name="refractivePropertiesLevel"
+                                               id="refractivePropertiesLevel1" value="1"> 轻
                                     </label>
-                                    <label class="am-btn am-btn-default am-btn-xs">
-                                        <input type="radio" name="options"
-                                               id="refractive_properties_level_2"> 中
+                                    <label class="am-btn am-btn-default am-btn-xs refractivePropertiesLevel2">
+                                        <input type="radio" name="refractivePropertiesLevel"
+                                               id="refractivePropertiesLevel2" value="2"> 中
                                     </label>
-                                    <label class="am-btn am-btn-default am-btn-xs">
-                                        <input type="radio" name="options"
-                                               id="refractive_properties_level_3"> 高
+                                    <label class="am-btn am-btn-default am-btn-xs refractivePropertiesLevel3">
+                                        <input type="radio" name="refractivePropertiesLevel"
+                                               id="refractivePropertiesLevel3" value="3"> 高
                                     </label>
                                 </div>
                             </div>
@@ -186,7 +178,7 @@
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
                                                class="am-form-field am-input-sm"
-                                               placeholder="日期">
+                                               placeholder="日期" id="appointmentTime">
                                     </div>
                                 </form>
                             </div>
@@ -194,14 +186,15 @@
 
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                                接待时间
+                                检测时间
                             </div>
                             <div class="am-u-sm-8 am-u-md-10">
                                 <form action="" class="am-form am-form-inline">
                                     <div class="am-form-group am-form-icon">
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
-                                               class="am-form-field am-input-sm" placeholder="时间">
+                                               class="am-form-field am-input-sm" placeholder="时间"
+                                               id="optometryTime">
                                     </div>
                                 </form>
                             </div>
@@ -209,128 +202,12 @@
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">接待员</div>
                             <div class="am-u-sm-8 am-u-md-10"><input type="text"
-                                                                     placeholder="请输入接待员的姓名"/></div>
+                                                                     placeholder="请输入接待员的姓名"
+                                                                     id="receptionName"/></div>
                         </div>
 
                     </div>
 
-                    <!--<div class="am-tab-panel am-fade" id="tab2">
-                        <form class="am-form">
-                            <table class="am-table am-table-striped am-table-hover table-main am-table-compact">
-                                <thead>
-                                <tr>
-                                    <th class="table-title">
-                                        <small>
-                                            服务体验
-                                        </small>
-                                    </th>
-                                    <th class="table-title">
-                                        <small>接待员</small>
-                                    </th>
-                                    <th class="table-title">
-                                        <small>预约时间</small>
-                                    </th>
-                                    <th class="table-title">
-                                        <small>体验时间</small>
-                                    </th>
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <small>第一次</small>
-                                    </td>
-                                    <td><input type="text"/></td>
-                                    <td>
-
-                                        <div>
-                                            <div class="am-form-group am-form-icon">
-                                                <i class="am-icon-calendar"></i>
-                                                <input type="datetime-local"
-                                                       class="am-form-field am-input-sm"
-                                                       placeholder="日期">
-                                            </div>
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <div class="am-form-group am-form-icon">
-                                                <i class="am-icon-calendar"></i>
-                                                <input type="datetime-local"
-                                                       class="am-form-field am-input-sm"
-                                                       placeholder="日期">
-                                            </div>
-
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <small>第二次</small>
-                                    </td>
-                                    <td><input type="text"/></td>
-                                    <td>
-                                        <div>
-                                            <div class="am-form-group am-form-icon">
-                                                <i class="am-icon-calendar"></i>
-                                                <input type="datetime-local"
-                                                       class="am-form-field am-input-sm"
-                                                       placeholder="日期">
-                                            </div>
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <div class="am-form-group am-form-icon">
-                                                <i class="am-icon-calendar"></i>
-                                                <input type="datetime-local"
-                                                       class="am-form-field am-input-sm"
-                                                       placeholder="日期">
-                                            </div>
-
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <small>第三次</small>
-                                    </td>
-                                    <td><input type="text"/></td>
-                                    <td>
-                                        <div>
-                                            <form action="" class="am-form am-form-inline">
-                                                <div class="am-form-group am-form-icon">
-                                                    <i class="am-icon-calendar"></i>
-                                                    <input type="date"
-                                                           class="am-form-field am-input-sm"
-                                                           placeholder="日期">
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <div class="am-form-group am-form-icon">
-                                                <i class="am-icon-calendar"></i>
-                                                <input type="date"
-                                                       class="am-form-field am-input-sm"
-                                                       placeholder="日期">
-                                            </div>
-
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>-->
                     <div class="am-tab-panel am-fade" id="tab2">
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">
@@ -342,7 +219,7 @@
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
                                                class="am-form-field am-input-sm"
-                                               placeholder="日期">
+                                               placeholder="日期" id="appointmentTimeExp1"/>
                                     </div>
                                 </form>
                             </div>
@@ -350,23 +227,24 @@
 
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                                接待时间
+                                体验时间
                             </div>
                             <div class="am-u-sm-8 am-u-md-10">
                                 <form action="" class="am-form am-form-inline">
                                     <div class="am-form-group am-form-icon">
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
-                                               class="am-form-field am-input-sm" placeholder="时间">
+                                               class="am-form-field am-input-sm" placeholder="时间"
+                                               id="experienceTimeExp1">
                                     </div>
                                 </form>
                             </div>
                         </div>
 
-                        <div class="am-g am-margin-top">
+                        <div class=" am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
                             <div class="am-u-sm-8 am-u-md-10">
-                                <input type="text" placeholder="请输入接待员姓名"/>
+                                <input type="text" placeholder="请输入接待员姓名" id="receptionNameExp1"/>
                             </div>
                         </div>
                     </div>
@@ -381,7 +259,7 @@
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
                                                class="am-form-field am-input-sm"
-                                               placeholder="日期">
+                                               placeholder="日期" id="appointmentTimeExp2">
                                     </div>
                                 </form>
                             </div>
@@ -389,14 +267,15 @@
 
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                                接待时间
+                                体验时间
                             </div>
                             <div class="am-u-sm-8 am-u-md-10">
                                 <form action="" class="am-form am-form-inline">
                                     <div class="am-form-group am-form-icon">
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
-                                               class="am-form-field am-input-sm" placeholder="时间">
+                                               class="am-form-field am-input-sm"
+                                               placeholder="时间" id="experienceTimeExp2">
                                     </div>
                                 </form>
                             </div>
@@ -405,7 +284,7 @@
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
                             <div class="am-u-sm-8 am-u-md-10">
-                                <input type="text" placeholder="请输入接待员姓名"/>
+                                <input type="text" placeholder="请输入接待员姓名" id="receptionNameExp2"/>
                             </div>
                         </div>
                     </div>
@@ -420,7 +299,7 @@
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
                                                class="am-form-field am-input-sm"
-                                               placeholder="日期">
+                                               placeholder="日期" id="appointmentTimeExp3">
                                     </div>
                                 </form>
                             </div>
@@ -428,14 +307,15 @@
 
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                                接待时间
+                                体验时间
                             </div>
                             <div class="am-u-sm-8 am-u-md-10">
                                 <form action="" class="am-form am-form-inline">
                                     <div class="am-form-group am-form-icon">
                                         <i class="am-icon-calendar"></i>
                                         <input type="datetime-local"
-                                               class="am-form-field am-input-sm" placeholder="时间">
+                                               class="am-form-field am-input-sm"
+                                               placeholder="时间" id="experienceTimeExp3">
                                     </div>
                                 </form>
                             </div>
@@ -444,7 +324,7 @@
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
                             <div class="am-u-sm-8 am-u-md-10">
-                                <input type="text" placeholder="请输入接待员姓名"/>
+                                <input type="text" placeholder="请输入接待员姓名" id="receptionNameExp3"/>
                             </div>
                         </div>
                     </div>
@@ -455,8 +335,8 @@
             <hr/>
             <div class="am-g am-g-collapse">
                 <div class="am-margin-left-lg am-u-sm-10">
-                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">保存</a>
-                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">提交</a>
+                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link save-btn">保存</a>
+                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link submit-btn">提交</a>
                 </div>
             </div>
         </div>
@@ -482,5 +362,11 @@
 <!--<![endif]-->
 <script src="assets/js/base/amazeui.min.js"></script>
 <script src="assets/js/base/app.js"></script>
+
+<script src="assets/js/experience.js"></script>
+
+<script src="assets/js/config/context.js"></script>
+
+<script src="assets/js/base/base64.js"></script>
 </body>
 </html>

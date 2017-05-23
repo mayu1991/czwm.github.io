@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>login</title>
+    <title>czwm-support</title>
     <meta name="description" content="这是一个 user 页面">
     <meta name="keywords" content="user">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="icon" type="image/png" href="assets/i/favicon.png">
@@ -24,11 +25,6 @@
 
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
-        <!--<strong>Amaze UI</strong>-->
-        <a href="login.html" class="am-icon-arrow-circle-left am-u-sm-5">
-            <small> 返回</small>
-        </a>
-
         <div class="am-u-sm-centered am-u-sm-5">
             <strong>登录页面</strong>
         </div>
@@ -51,7 +47,7 @@
 
             <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
 
-                <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
+                <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4" style="margin-top: 40px">
                     <form class="am-form am-form-horizontal ">
                         <div class="am-form-group">
                             <label for="user-name" class="am-u-sm-4 am-form-label">
@@ -83,10 +79,7 @@
                 </div>
             </div>
             <hr/>
-            <!--<div class="am-alert am-hide-sm-only" data-am-alert id="login-alert">
-                <button type="button" class="am-close">&times;</button>
-                <p>登录失败，请输入正确的用户名和密码</p>
-            </div>-->
+
             <div class="am-g am-g-collapse">
                 <div class="am-margin-left-lg am-u-sm-10">
                     <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link login-btn">登录</a>
@@ -123,5 +116,11 @@
 <script src="assets/js/base/app.js"></script>
 
 <script src="assets/js/login.js"></script>
+
+<script src="assets/js/config/context.js"></script>
+
+<script src="assets/js/base/base64.js"></script>
+
+<script src="layer_mobile/layer.js"></script>
 </body>
 </html>

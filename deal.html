@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin form Examples</title>
+    <title>czwm-support</title>
     <meta name="description" content="这是一个form页面">
     <meta name="keywords" content="form">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,8 +25,8 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
         <!--<strong>Amaze UI</strong>-->
-        <a href="main.html" class="am-icon-arrow-circle-left am-u-sm-4">
-            <small> 返回</small>
+        <a href="main.html" class="am-icon-backward am-u-sm-4 back-btn">
+            <small>客户列表</small>
         </a>
 
         <div class="am-u-sm-centered am-u-sm-4">
@@ -41,15 +41,15 @@
     <div class="admin-content">
         <div class="admin-content-body">
 
-            <div class="am-tabs am-margin" data-am-tabs>
+            <div class="am-tabs am-margin" style="margin-top: 50px">
 
                 <form class="am-form">
 
-
+                    <div class="am-hide"><input id="dealId"></input></div>
                     <div class="am-g am-margin-top">
                         <div class="am-u-sm-4 am-u-md-2 am-text-right">成交员</div>
                         <div class="am-u-sm-8 am-u-md-10">
-                            <input type="text" placeholder="请输入接待员姓名"/>
+                            <input type="text" placeholder="请输入接待员姓名" id="dealTratorName"/>
                         </div>
                     </div>
 
@@ -57,13 +57,13 @@
                         <div class="am-u-sm-4 am-u-md-2 am-text-right">成交情况</div>
                         <div class="am-u-sm-8 am-u-md-10">
                             <div class="am-btn-group" data-am-button>
-                                <label class="am-btn am-btn-default am-btn-xs">
-                                    <input type="radio" name="options"
-                                           id="refractive_properties_level_1"> 是
+                                <label class="am-btn am-btn-default am-btn-xs dealResultTypeOptions1">
+                                    <input type="radio" name="dealResultTypeOptions"
+                                           id="dealResultType1" value="1"> 是
                                 </label>
-                                <label class="am-btn am-btn-default am-btn-xs">
-                                    <input type="radio" name="options"
-                                           id="refractive_properties_level_2"> 否
+                                <label class="am-btn am-btn-default am-btn-xs dealResultTypeOptions0">
+                                    <input type="radio" name="dealResultTypeOptions"
+                                           id="dealResultType0" value="0"> 否
                                 </label>
 
                             </div>
@@ -77,7 +77,7 @@
             <div class="am-g am-g-collapse">
                 <div class="am-margin-left-lg am-u-sm-10">
                     <!--<a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">保存</a>-->
-                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">提交</a>
+                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link submit-btn">提交</a>
                 </div>
             </div>
 
@@ -104,5 +104,12 @@
 <!--<![endif]-->
 <script src="assets/js/base/amazeui.min.js"></script>
 <script src="assets/js/base/app.js"></script>
+
+
+<script src="assets/js/deal.js"></script>
+
+<script src="assets/js/config/context.js"></script>
+
+<script src="assets/js/base/base64.js"></script>
 </body>
 </html>

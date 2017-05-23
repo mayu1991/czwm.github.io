@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin form Examples</title>
+    <title>czwm-support</title>
     <meta name="description" content="这是一个form页面">
     <meta name="keywords" content="form">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,8 +25,8 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
         <!--<strong>Amaze UI</strong>-->
-        <a href="main.html" class="am-icon-arrow-circle-left am-u-sm-4">
-            <small> 返回</small>
+        <a href="main.html" class="am-icon-backward am-u-sm-4 back-btn">
+            <small>客户列表</small>
         </a>
 
         <div class="am-u-sm-centered am-u-sm-5">
@@ -43,6 +43,7 @@
 
             <div class="am-tabs am-margin" data-am-tabs>
 
+                <div class="am-hide"><input id="optometryId"></input></div>
                 <form class="am-form">
                     <table class="am-table am-text-nowrap am-table-striped am-table-hover table-main .am-table-compact">
                         <thead>
@@ -63,18 +64,18 @@
 
                         <tr>
                             <td>
-                                <small>裸眼视力</small>
+                                裸眼视力
                             </td>
-                            <td><input type="text" class=""/></td>
-                            <td><input type="text"/></td>
+                            <td><input type="text" id="leftNakedVision"/></td>
+                            <td><input type="text" id="rightNakedVision"/></td>
 
                         </tr>
                         <tr>
                             <td>
-                                <small>综合验光</small>
+                                综合验光
                             </td>
-                            <td><input type="text"/></td>
-                            <td><input type="text"/></td>
+                            <td><input type="text" id="leftCombinedVision"/></td>
+                            <td><input type="text" id="rightCombinedVision"/></td>
                         </tr>
                         </tbody>
                     </table>
@@ -90,7 +91,7 @@
                                 <i class="am-icon-calendar"></i>
                                 <input type="datetime-local"
                                        class="am-form-field am-input-sm"
-                                       placeholder="日期">
+                                       placeholder="日期" id="appointmentTime">
                             </div>
                         </form>
                     </div>
@@ -98,14 +99,15 @@
 
                 <div class="am-g am-margin-top">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        接待时间
+                        体验时间
                     </div>
                     <div class="am-u-sm-8 am-u-md-10">
                         <form action="" class="am-form am-form-inline">
                             <div class="am-form-group am-form-icon">
                                 <i class="am-icon-calendar"></i>
                                 <input type="datetime-local"
-                                       class="am-form-field am-input-sm" placeholder="时间">
+                                       class="am-form-field am-input-sm" placeholder="时间"
+                                       id="experienceTime">
                             </div>
                         </form>
                     </div>
@@ -114,7 +116,7 @@
                 <div class="am-g am-margin-top">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">接 待 员</div>
                     <div class="am-u-sm-8 am-u-md-10">
-                        <input type="text" placeholder="请输入接待员姓名"/>
+                        <input type="text" placeholder="请输入接待员姓名" id="receptionName"/>
                     </div>
                 </div>
 
@@ -123,8 +125,8 @@
             <hr/>
             <div class="am-g am-g-collapse">
                 <div class="am-margin-left-lg am-u-sm-10">
-                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">保存</a>
-                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link">提交</a>
+                    <a class=" am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link save-btn">保存</a>
+                    <a class=" am-margin am-u-sm-centered am-btn am-btn-secondary am-btn-lg sk-link submit-btn">提交</a>
                 </div>
             </div>
         </div>
@@ -151,5 +153,11 @@
 <!--<![endif]-->
 <script src="assets/js/base/amazeui.min.js"></script>
 <script src="assets/js/base/app.js"></script>
+
+<script src="assets/js/optmetry.js"></script>
+
+<script src="assets/js/config/context.js"></script>
+
+<script src="assets/js/base/base64.js"></script>
 </body>
 </html>

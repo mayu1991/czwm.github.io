@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin table Examples</title>
+    <title>czwm-support</title>
     <meta name="description" content="这是一个 table 页面">
     <meta name="keywords" content="table">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,8 +25,8 @@
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand am-g">
         <!--<strong>Amaze UI</strong>-->
-        <a href="login.html" class="am-icon-arrow-circle-left am-u-sm-4">
-            <small> 返回</small>
+        <a href="login.html" class="am-icon-backward am-u-sm-4">
+            <small>登录</small>
         </a>
 
         <div class="am-u-sm-centered am-u-sm-4">
@@ -55,50 +55,21 @@
             <div class="am-g">
                 <div class="am-u-sm-12">
                     <form class="am-form">
-                        <table class="am-table am-table-striped am-table-hover table-main">
+                        <table class="am-table am-table-striped am-table-hover table-main"
+                               id="cust-table">
                             <thead>
                             <tr>
                                 <th class="table-title">客户姓名</th>
                                 <th class="table-set">操作</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td><a href="experience.html"><strong>马宇</strong></a></td>
-                                <td>
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <!--<button class="am-btn am-btn-default am-btn-xs am-text-secondary">-->
-                                            <a href="experience.html"><span
-                                                    class="am-icon-arrow-circle-right"></span> <span
-                                            >体验</span></a>
-                                            <!--</button>
-                                            <button class="am-btn am-btn-default am-btn-xs ">-->
-                                            <a href="optmetry.html"><span
-                                                    class="am-icon-arrow-circle-right"></span> <span
-                                            >检测</span></a>
-                                            <a href="re-optmetry.html"><span
-                                                    class="am-icon-arrow-circle-right"></span> <span
-                                            >复检</span></a>
 
-                                            <!--</button>
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger">-->
-                                            <a href="deal.html"><span
-                                                    class="am-icon-arrow-circle-right"></span> <span
-                                            >成交</span></a>
-                                            <!--</button>-->
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            </tbody>
                         </table>
                     </form>
                 </div>
 
             </div>
-            <footer class="admin-content-footer">
+            <footer class="admin-content-footer" style="position:absolute;bottom: 0px">
                 <hr>
                 <p class="am-padding-left">© 2017 manoo, Inc. Licensed under MIT license.</p>
             </footer>
@@ -121,5 +92,10 @@
 <script src="assets/js/base/amazeui.min.js"></script>
 <script src="assets/js/base/app.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/config/context.js"></script>
+
+<script src="assets/js/base/base64.js"></script>
+<!--<script src="assets/js/layer.js"></script>-->
+<!--<script src="assets/js/need/layer.css"></script>-->
 </body>
 </html>
